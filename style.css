@@ -1,0 +1,167 @@
+:root {
+  font-family: Georgia, 'Times New Roman', Times, serif; /* Mais apropriado para leitura longa */
+  line-height: 1.8; /* Aumenta o espaçamento entre linhas */
+  font-weight: 400;
+
+  color: #080808; /* Cor mais suave para leitura */
+  background-color: #cac5c5; /* Fundo mais suave */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+body {
+  margin: 0;
+  padding: 20px; /* Adiciona um pouco de padding para não colar o texto nas bordas */
+  display: block; /* Muda de flex para block para um fluxo mais natural do texto */
+  min-width: auto; /* Remove a restrição de largura mínima */
+  min-height: 100vh;
+  box-sizing: border-box; /* Garante que o padding não afete a largura total */
+}
+
+/* Removendo estilos específicos para blobs, já que focaremos mais no texto */
+.hero {
+  display: block; /* Layout de bloco padrão para facilitar a leitura */
+  margin: auto; /* Centraliza na página */
+  max-width: 800px; /* Largura máxima para leitura confortável */
+}
+
+.hero h2 {
+  font-family: 'Arial', sans-serif; /* Mais apropriado para cabeçalhos */
+  font-size: 48px; /* Tamanho menor para cabeçalhos em desktop */
+  line-height: 1.2; /* Espaçamento entre linhas para cabeçalhos */
+  text-align: left; /* Alinhamento à esquerda para leitura natural */
+  margin-bottom: 20px;
+  color: #021123;
+}
+
+.hero p {
+  font-size: 20px; /* Aumenta a legibilidade do texto */
+  text-align: left; /* Alinhamento à esquerda */
+  color: #021123;
+}
+
+@media (max-width: 1200px) {
+  /* Ajustes para telas médias, mantendo a legibilidade */
+}
+
+@media (max-width: 500px) {
+  /* Ajustes para responsividade em dispositivos móveis */
+  .hero h2 {
+      font-size: 32px; /* Tamanho de fonte responsivo para h2 */
+  }
+
+  .hero p {
+      font-size: 18px; /* Tamanho de fonte responsivo para parágrafos */
+      padding: 0 10px; /* Adiciona padding para não colar o texto nas bordas */
+  }
+}
+
+  
+  .bouncing-blob {
+    width: 32vw;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    will-change: transform;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    transform-origin: left top;
+  }
+  
+  .bouncing-blob--blue {
+    background: #4783c7;
+  }
+  
+  .bouncing-blob--white {
+    background: #ffffff;
+    z-index: 2;
+    width: 15vw;
+  }
+  
+  .bouncing-blob--purple {
+    background: #8c8ff1;
+  }
+  
+  .bouncing-blob--pink {
+    background: #e289cd50;
+  }
+  
+  .bouncing-blobs-container {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .bouncing-blobs-glass {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(140px);
+    -webkit-backdrop-filter: blur(140px);
+    pointer-events: none;
+  }
+  
+  .bouncing-blobs {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  
+  @media (max-width: 1200px) {
+    .bouncing-blobs-glass {
+      backdrop-filter: blur(120px);
+      -webkit-backdrop-filter: blur(120px);
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .bouncing-blob {
+      width: 60vw;
+    }
+    .bouncing-blob--white {
+      width: 30vw;
+    }
+    .bouncing-blobs-glass {
+      backdrop-filter: blur(90px);
+      -webkit-backdrop-filter: blur(90px);
+    }
+  
+    .hero h2 {
+      font-size: 32px;
+    }
+  
+    .hero p {
+      font-size: 16px;
+      padding: 0 20px;
+    }
+  
+  
+  .tutorial-link svg {
+    width: 30px;
+  }
+  
+  @media(max-width: 500px) {
+    .tutorial-link a {
+      font-size: 14px;
+      padding: 2px 4px;
+    }
+    .tutorial-link svg {
+      width: 15px;
+    }
+  }
